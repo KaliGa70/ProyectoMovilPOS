@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "343821376244",
+    "project_id": "movilpos-25e45",
+    "storage_bucket": "movilpos-25e45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343821376244:android:7436c8dd30e048baa29ca1",
+        "android_client_info": {
+          "package_name": "com.proyect_app.proyectomovilpos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbzwKS1dV29s_Z4jlt1cs2Tvxh9ZqAleY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
