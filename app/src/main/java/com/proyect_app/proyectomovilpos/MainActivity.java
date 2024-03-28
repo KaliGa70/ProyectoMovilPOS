@@ -13,6 +13,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.dpalacios803gmail.com.proyectomovilpos.R;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         /** Botones **/
         ImageButton btnInventario = (ImageButton) findViewById(R.id.btnInventario);
         Button btnSalir = (Button) findViewById(R.id.btnSalir);
-        //hola, solo estoy probando
         ImageButton btnPedidos = (ImageButton) findViewById(R.id.btnPedidos);
         ImageButton btnMarketPlace = (ImageButton) findViewById(R.id.btnMarketPlace);
         ImageButton btnControl = (ImageButton) findViewById(R.id.btnControl);
