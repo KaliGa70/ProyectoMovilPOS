@@ -8,8 +8,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.dpalacios803gmail.com.proyectomovilpos.R;
-
 public class cMarketPlace extends AppCompatActivity {
 
     @Override

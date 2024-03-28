@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.dpalacios803gmail.com.proyectomovilpos.R;
 
 public class cPedidos extends AppCompatActivity {
 
