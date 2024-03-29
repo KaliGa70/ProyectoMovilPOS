@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">ProyectoMovilPOS</string>
-    <string name="btnart">ARTÍCULOS</string>
+    <string name="textArt">ARTÍCULOS</string>
     <string name="btncant">CANTIDADES</string>
     <string name="nombreapp">MovilPOS</string>
+    <string name="textInv">INVENTARIO</string>
 
 </resources>
