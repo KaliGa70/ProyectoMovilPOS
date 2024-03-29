@@ -7,6 +7,40 @@
     android:layout_height="match_parent"
     tools:context=".inventario_articulos">
 
+    <Button
+        android:id="@+id/btntodos"
+        android:layout_width="365dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/custom_boton_todos"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/texttodos"
+        android:textSize="45sp"
+        android:elevation="3dp"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <Button
+        android:id="@+id/btncat"
+        android:layout_width="365dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/custom_boton_cat"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/textcat"
+        android:textSize="45sp"
+        android:elevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.592" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="360dp"

@@ -4,5 +4,7 @@
     <string name="btncant">CANTIDADES</string>
     <string name="nombreapp">MovilPOS</string>
     <string name="textInv">INVENTARIO</string>
+    <string name="texttodos">TODOS</string>
+    <string name="textcat">CATEGORÍAS</string>
 
 </resources>

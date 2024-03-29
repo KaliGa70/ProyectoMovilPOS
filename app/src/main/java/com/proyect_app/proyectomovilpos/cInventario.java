@@ -25,6 +25,7 @@ public class cInventario extends AppCompatActivity {
         });
 
         Button btnBack01 = (Button) findViewById(R.id.btnBack01);
+        Button btnart = (Button) findViewById(R.id.btnart);
 
         btnBack01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +38,16 @@ public class cInventario extends AppCompatActivity {
             }
         });
 
+        btnart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(cInventario.this, inventario_articulos.class );
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
 
     }

@@ -6,6 +6,7 @@
     <color name="yellow">#FFC000</color>
     <color name="blueart">#80a4f1</color>
     <color name="redcant">#ff7c80</color>
-
+    <color name="lightyellow">#ffd966</color>
+    <color name="lightpurple">#af97f8</color>
 
 </resources>
