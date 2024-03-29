@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class cPedidos extends AppCompatActivity {
+public class cPedidos extends AppCompatActivity implements RecyclerViewInterface{
 
     List<ListElement01> elements;
 
@@ -70,4 +70,8 @@ public class cPedidos extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onItemClick(int position) {
+
+    }
 }
