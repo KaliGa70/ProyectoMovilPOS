@@ -60,6 +60,17 @@ public class NuevoPendiente extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        // Aquí colocamos el código que queremos que se ejecute al presionar el botón de retroceso
+        // En este caso, llamaremos al método super.onBackPressed() para mantener el comportamiento predeterminado
+        // y simplemente regresar a la actividad anterior si existe, o cerrar la actividad actual si no hay actividad anterior.
+        super.onBackPressed();
+        Intent intent = new Intent(NuevoPendiente.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void cBack03() {
 
         Intent intent = new Intent(NuevoPendiente.this, MainActivity.class);
