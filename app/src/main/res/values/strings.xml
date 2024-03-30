@@ -48,6 +48,14 @@
         <item>Naranja</item>
     </string-array>
 
+    <string-array name="Precio">
+        <item>$18</item>
+        <item>$18</item>
+        <item>$18</item>
+        <item>$18</item>
+        <item>$18</item>
+    </string-array>
+
     <string-array name="Chi">
 
     </string-array>

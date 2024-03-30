@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class cPedidos extends AppCompatActivity implements RecyclerViewInterface
         });
 
         Button btnBack01 = (Button) findViewById(R.id.btnBack01);
+        ImageButton imageBtnCarrito_01 = (ImageButton) findViewById(R.id.imageBtnCarrito_01);
 
         RecyclerView recyclerView = findViewById(R.id.mRecyclerView);
 
@@ -54,6 +56,14 @@ public class cPedidos extends AppCompatActivity implements RecyclerViewInterface
 
             }
         });
+        imageBtnCarrito_01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                cCarrito01();
+
+            }
+        });
     }
 
     private void setUpCategoryModels() {
@@ -67,6 +77,14 @@ public class cPedidos extends AppCompatActivity implements RecyclerViewInterface
     public void cBack01() {
 
         Intent intent = new Intent(cPedidos.this, NuevoPendiente.class);
+        startActivity(intent);
+        finish();
+
+    }
+
+    public void cCarrito01() {
+
+        Intent intent = new Intent(cPedidos.this, aCarrito.class);
         startActivity(intent);
         finish();
 

@@ -18,6 +18,9 @@
         android:theme="@style/Theme.ProyectoMovilPOS"
         tools:targetApi="31">
         <activity
+            android:name=".aCarrito"
+            android:exported="false" />
+        <activity
             android:name=".cGuardado"
             android:exported="false" />
         <activity
