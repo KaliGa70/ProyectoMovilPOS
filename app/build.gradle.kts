@@ -37,10 +37,12 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
+    implementation ("com.google.code.gson:gson:2.8.9")
     /** Dependecias para el recyclerview **/
 
     implementation("androidx.recyclerview:recyclerview:1.3.2")
