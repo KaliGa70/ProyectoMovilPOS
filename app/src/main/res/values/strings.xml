@@ -1,4 +1,13 @@
 <resources>
+
+    <string name="textArt">ARTÍCULOS</string>
+    <string name="btncant">CANTIDADES</string>
+    <string name="nombreapp">MovilPOS</string>
+    <string name="textInv">INVENTARIO</string>
+    <string name="texttodos">TODOS</string>
+    <string name="textcat">CATEGORÍAS</string>
+    <string name="btnback">Regresar</string>
+
     <string name="app_name">MovilPOS</string>
 
     <string-array name="category">
