@@ -11,8 +11,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class inventario_articulos extends AppCompatActivity {
 
+    int n = 90;
+    List<Producto09> productos = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +32,7 @@ public class inventario_articulos extends AppCompatActivity {
 
         Button btnBack01 = (Button) findViewById(R.id.btnBack01);
         Button btntodos = (Button) findViewById(R.id.btntodos);
-
+        Button imprime = (Button) findViewById(R.id.imprime);
 
         btntodos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +55,41 @@ public class inventario_articulos extends AppCompatActivity {
             }
         });
 
+        imprime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(Intent.ACTION_SEND);
+
+                intent.setType("text/plain");
+
+                productos.add(new Producto09(1, "Coca", 4, 70.0));
+                productos.add(new Producto09(2, "Agua - Jamaica", 2, 60.0));
+                productos.add(new Producto09(3, "Tacos", 6, 90.0));
+
+                String aux = null;
+
+                for(Producto09 produc : productos ){
+
+                    if(aux == null){
+
+                        aux = String.valueOf(produc.getId() + " " + produc.getNombre() + " " + produc.getCantidad() + " " + produc.getPrecio() + "\n");
+
+                    }
+                    else{
+
+                        aux += String.valueOf(produc.getId() + " " + produc.getNombre() + " " + produc.getCantidad() + " " + produc.getPrecio() + "\n");
+
+                    }
+
+                }
+
+                intent.putExtra(Intent.EXTRA_TEXT, aux);
+
+                startActivity(Intent.createChooser(intent, "Enviar texto a traves de:"));
+
+            }
+        });
 
 
 

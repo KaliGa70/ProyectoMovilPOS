@@ -20,5 +20,15 @@ public class pedidos_categoria_producto_teclado extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+
+
+
+
+
+
+
+
     }
 }
