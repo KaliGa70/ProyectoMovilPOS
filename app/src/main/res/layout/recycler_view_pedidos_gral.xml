@@ -29,10 +29,11 @@
                     android:layout_height="wrap_content"
                     android:text="nameProducto"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/tvPrecioProducto"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.05"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.512" />
+                    app:layout_constraintVertical_bias="0.509" />
 
                 <TextView
                     android:id="@+id/tvPrecioProducto"
@@ -40,20 +41,21 @@
                     android:layout_height="wrap_content"
                     android:text="precioProducto"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageBtnDelete"
-                    app:layout_constraintStart_toEndOf="@+id/tvNameProducto"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.603"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.512" />
+                    app:layout_constraintVertical_bias="0.509" />
 
                 <ImageButton
                     android:id="@+id/imageBtnDelete"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_marginStart="100dp"
                     android:backgroundTint="#00FFFFFF"
                     app:layout_constraintBottom_toTopOf="@+id/tvLineDeco_04"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tvPrecioProducto"
+                    app:layout_constraintHorizontal_bias="0.954"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvLineDeco_03"
                     app:srcCompat="@mipmap/ic_delete_prod_foreground" />
 
