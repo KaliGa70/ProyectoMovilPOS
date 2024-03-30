@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void cPedidos() {
 
-        Intent intent = new Intent(MainActivity.this, cPedidos.class);
+        Intent intent = new Intent(MainActivity.this, NuevoPendiente.class);
         startActivity(intent);
         finish();
 

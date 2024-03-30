@@ -22,7 +22,8 @@ public class cPedidos extends AppCompatActivity implements RecyclerViewInterface
     ArrayList<CategoryModel> categoryModels = new ArrayList<>();
     int[] categoryImages ={R.drawable.ic_launcher_background, R.drawable.ic_launcher_background
             , R.drawable.ic_launcher_background, R.drawable.ic_launcher_background
-            , R.drawable.ic_launcher_background, R.drawable.ic_launcher_background};
+            , R.drawable.ic_launcher_background, R.drawable.ic_launcher_background
+            , R.drawable.ic_launcher_background};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,7 @@ public class cPedidos extends AppCompatActivity implements RecyclerViewInterface
 
     public void cBack01() {
 
-        Intent intent = new Intent(cPedidos.this, MainActivity.class);
+        Intent intent = new Intent(cPedidos.this, NuevoPendiente.class);
         startActivity(intent);
         finish();
 

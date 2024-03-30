@@ -17,5 +17,38 @@
         <item>Sopes</item>
         <item>Tacos</item>
         <item>Agua</item>
+        <item>Chi</item>
+    </string-array>
+
+    <string-array name="Pozole">
+
+    </string-array>
+
+    <string-array name="Mixtas">
+
+    </string-array>
+
+    <string-array name="Refrescos">
+
+    </string-array>
+
+    <string-array name="Sopes">
+
+    </string-array>
+
+    <string-array name="Tacos">
+
+    </string-array>
+
+    <string-array name="Agua">
+        <item>Jamaica</item>
+        <item>Horchata</item>
+        <item>Limon</item>
+        <item>Tamarindo</item>
+        <item>Naranja</item>
+    </string-array>
+
+    <string-array name="Chi">
+
     </string-array>
 </resources>

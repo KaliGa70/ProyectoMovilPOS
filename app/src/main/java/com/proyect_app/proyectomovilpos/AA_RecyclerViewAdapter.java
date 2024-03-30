@@ -34,29 +34,30 @@ public class AA_RecyclerViewAdapter extends RecyclerView.Adapter<AA_RecyclerView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        // Obtenemos los datos de las categorías
-        CategoryModel categoryModel = categoryModels.get(position);
+        // Calculamos el índice base para los datos de esta fila (izquierda)
+        int leftIndex = position * 2;
 
-        // Asignamos los datos a los elementos de la fila izquierda
-        holder.tvNameLeft.setText(categoryModel.getCategoryName());
-        holder.imageViewLeft.setImageResource(categoryModel.getImage());
+        // Configuramos los datos para la fila izquierda
+        CategoryModel categoryModelLeft = categoryModels.get(leftIndex);
+        holder.tvNameLeft.setText(categoryModelLeft.getCategoryName());
+        holder.imageViewLeft.setImageResource(categoryModelLeft.getImage());
 
-        // Verificamos si hay otra categoría disponible para la fila derecha
-        if (position + 1 < categoryModels.size()) {
-            // Obtenemos los datos de la siguiente categoría
-            CategoryModel nextCategoryModel = categoryModels.get(position + 1);
-
-            // Asignamos los datos a los elementos de la fila derecha
-            holder.tvNameRight.setText(nextCategoryModel.getCategoryName());
-            holder.imageViewRight.setImageResource(nextCategoryModel.getImage());
+        // Verificamos si hay una categoría disponible para la fila derecha
+        int rightIndex = leftIndex + 1;
+        if (rightIndex < categoryModels.size()) {
+            // Configuramos los datos para la fila derecha
+            CategoryModel categoryModelRight = categoryModels.get(rightIndex);
+            holder.tvNameRight.setText(categoryModelRight.getCategoryName());
+            holder.imageViewRight.setImageResource(categoryModelRight.getImage());
 
             // Hacemos visible la fila derecha
             holder.itemViewRight.setVisibility(View.VISIBLE);
         } else {
-            // Si no hay más categorías, ocultamos la fila derecha
+            // Si no hay una categoría disponible para la fila derecha, la ocultamos
             holder.itemViewRight.setVisibility(View.INVISIBLE);
         }
     }
+
 
     @Override
     public int getItemCount() {

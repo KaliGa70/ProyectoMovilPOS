@@ -5,18 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cPedidos">
+    tools:context=".NuevoPendiente">
 
     <TextView
-        android:id="@+id/TituloPedidosMovilPOS"
+        android:id="@+id/TituloNuevoPendienteMovilPOS"
         android:layout_width="163dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:background="@drawable/custom_logo"
-        android:fontFamily="@font/lexend"
-        android:text="@string/nombreapp"
+        android:text="MovilPOS"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
@@ -25,7 +23,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <Button
-        android:id="@+id/btnBack01"
+        android:id="@+id/btnBack03"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginStart="60dp"
@@ -35,19 +33,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.303"
-        app:layout_constraintStart_toEndOf="@+id/TituloPedidosMovilPOS"
+        app:layout_constraintStart_toEndOf="@+id/TituloNuevoPendienteMovilPOS"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEliminar" />
 
     <TextView
         android:id="@+id/tvCategoria_02"
@@ -64,46 +52,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TituloPedidosMovilPOS"
+        app:layout_constraintTop_toBottomOf="@+id/TituloNuevoPendienteMovilPOS"
         app:layout_constraintVertical_bias="0.038" />
 
     <Button
-        android:id="@+id/btnEliminar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Eliminar"
-        app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
-        app:layout_constraintEnd_toStartOf="@+id/btnAgregar"
+        android:id="@+id/btnNuevos"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Nuevos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCategoria_02"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
-        android:id="@+id/btnAgregar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnPendientes"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
-        android:text="Agregar"
-        app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
-        app:layout_constraintEnd_toStartOf="@+id/btnEditar"
-        app:layout_constraintStart_toEndOf="@+id/btnEliminar"
-        app:layout_constraintTop_toBottomOf="@+id/tvCategoria_02"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnEditar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Editar"
-        app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+        android:text="Pendientes"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnAgregar"
-        app:layout_constraintTop_toBottomOf="@+id/tvCategoria_02"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.742" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
