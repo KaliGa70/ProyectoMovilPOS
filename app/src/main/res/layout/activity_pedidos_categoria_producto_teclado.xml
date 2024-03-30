@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pedidos_categoria_producto_teclado">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:background="@drawable/custom_testview_teclado"
+        android:fontFamily="@font/lexend_medium"
+        android:text="3"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:layout_width="394dp"
+        android:layout_height="579dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <!-- Primer LinearLayout horizontal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Coloca aquí tus vistas para la primera fila -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button 1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button 2"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button 3"/>
+            <!-- Puedes agregar más vistas aquí según sea necesario -->
+
+        </LinearLayout>
+
+        <!-- Segundo LinearLayout horizontal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Coloca aquí tus vistas para la segunda fila -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button 2" />
+
+            <!-- Puedes agregar más vistas aquí según sea necesario -->
+
+        </LinearLayout>
+
+        <!-- Puedes agregar más LinearLayouts horizontales según sea necesario -->
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

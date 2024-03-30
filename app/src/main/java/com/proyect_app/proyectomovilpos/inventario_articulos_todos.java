@@ -11,13 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class inventario_articulos extends AppCompatActivity {
+public class inventario_articulos_todos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_inventario_articulos);
+        setContentView(R.layout.activity_inventario_articulos_todos);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -25,33 +25,17 @@ public class inventario_articulos extends AppCompatActivity {
         });
 
         Button btnBack01 = (Button) findViewById(R.id.btnBack01);
-        Button btntodos = (Button) findViewById(R.id.btntodos);
 
-
-        btntodos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(inventario_articulos.this, inventario_articulos_todos.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
         btnBack01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(inventario_articulos.this, cInventario.class);
+                Intent intent = new Intent(inventario_articulos_todos.this, inventario_articulos.class);
                 startActivity(intent);
                 finish();
 
             }
         });
-
-
-
-
 
     }
 }

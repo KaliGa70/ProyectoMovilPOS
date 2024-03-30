@@ -6,5 +6,5 @@
     <string name="textInv">INVENTARIO</string>
     <string name="texttodos">TODOS</string>
     <string name="textcat">CATEGORÍAS</string>
-
+    <string name="btnback">Regresar</string>
 </resources>
