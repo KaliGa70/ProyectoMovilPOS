@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">ProyectoMovilPOS</string>
+    <string name="app_name">MovilPOS</string>
+
+    <string-array name="category">
+        <item>Pozole</item>
+        <item>Mixtas</item>
+        <item>Refrescos</item>
+        <item>Sopes</item>
+        <item>Tacos</item>
+        <item>Agua</item>
+    </string-array>
 </resources>

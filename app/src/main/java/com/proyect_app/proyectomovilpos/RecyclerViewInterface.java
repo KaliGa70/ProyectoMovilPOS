@@ -1,5 +1,6 @@
 package com.proyect_app.proyectomovilpos;
 
-public interface RecyclerViewInterface {
-    void onItemClick(int position);
+interface RecyclerViewInterface {
+
+    void onItemClick(int pos);
 }

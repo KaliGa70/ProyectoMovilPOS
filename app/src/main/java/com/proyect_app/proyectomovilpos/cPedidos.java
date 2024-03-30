@@ -19,7 +19,10 @@ import java.util.List;
 
 public class cPedidos extends AppCompatActivity implements RecyclerViewInterface{
 
-    List<ListElement01> elements;
+    ArrayList<CategoryModel> categoryModels = new ArrayList<>();
+    int[] categoryImages ={R.drawable.ic_launcher_background, R.drawable.ic_launcher_background
+            , R.drawable.ic_launcher_background, R.drawable.ic_launcher_background
+            , R.drawable.ic_launcher_background, R.drawable.ic_launcher_background};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,13 @@ public class cPedidos extends AppCompatActivity implements RecyclerViewInterface
 
         Button btnBack01 = (Button) findViewById(R.id.btnBack01);
 
-        init();
+        RecyclerView recyclerView = findViewById(R.id.mRecyclerView);
+
+        setUpCategoryModels();
+
+        AA_RecyclerViewAdapter adapter = new AA_RecyclerViewAdapter(this, categoryModels, this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         btnBack01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,20 +55,12 @@ public class cPedidos extends AppCompatActivity implements RecyclerViewInterface
         });
     }
 
-    public void init() {
-        elements = new ArrayList<>();
-        elements.add(new ListElement01("Pozole"));
-        elements.add(new ListElement01("Mixtas"));
-        elements.add(new ListElement01("Refrescos"));
-        elements.add(new ListElement01("Sopes"));
-        elements.add(new ListElement01("Tacos"));
-        elements.add(new ListElement01("Agua"));
+    private void setUpCategoryModels() {
+        String[] CategoryNames = getResources().getStringArray(R.array.category);
 
-        ListAdapter01 listAdapter01 = new ListAdapter01(elements, this);
-        RecyclerView recyclerView = findViewById(R.id.ListRV01);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(listAdapter01);
+        for (int i = 0; i < CategoryNames.length; i++) {
+            categoryModels.add(new CategoryModel(CategoryNames[i], categoryImages[i]));
+        }
     }
 
     public void cBack01() {
@@ -72,6 +73,12 @@ public class cPedidos extends AppCompatActivity implements RecyclerViewInterface
 
     @Override
     public void onItemClick(int position) {
+        Intent intent = new Intent(cPedidos.this, aCategoria.class);
 
+        intent.putExtra("NAME", categoryModels.get(position).getCategoryName());
+        intent.putExtra("IMAGE", categoryModels.get(position).getImage());
+
+        startActivity(intent);
+        finish();
     }
 }
