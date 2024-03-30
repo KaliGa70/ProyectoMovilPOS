@@ -35,12 +35,23 @@ public class aCarrito extends AppCompatActivity {
 
 
         Button btnBack05 = (Button) findViewById(R.id.btnBack04);
+        Button btnConfirmar_02 = (Button) findViewById(R.id.btnConfirmar_02);
+
 
         btnBack05.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 cBack05();
+
+            }
+        });
+
+        btnConfirmar_02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                cConfirmar_02();
 
             }
         });
@@ -76,6 +87,14 @@ public class aCarrito extends AppCompatActivity {
     public void cBack05() {
 
         Intent intent = new Intent(aCarrito.this, cPedidos.class);
+        startActivity(intent);
+        finish();
+
+    }
+
+    public void cConfirmar_02() {
+
+        Intent intent = new Intent(aCarrito.this, MetodoPago.class);
         startActivity(intent);
         finish();
 

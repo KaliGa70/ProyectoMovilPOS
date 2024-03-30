@@ -38,7 +38,7 @@ public class aCategoria extends AppCompatActivity implements RecyclerViewInterfa
         });
 
         Button btnBack02 = (Button) findViewById(R.id.btnBack02);
-        Button btnConfirmar = (Button) findViewById(R.id.btnConfirmar);
+        //Button btnConfirmar = (Button) findViewById(R.id.btnConfirmar_02);
 
         name = getIntent().getStringExtra("NAME");
         categoryNa = getIntent().getStringExtra("CATEGORY1");
