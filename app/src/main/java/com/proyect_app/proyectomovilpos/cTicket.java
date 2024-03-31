@@ -27,9 +27,34 @@ public class cTicket extends AppCompatActivity {
 
         TextView tvTicket_01 = findViewById(R.id.tvTicket_01);
 
-        String numberPedido = getIntent().getStringExtra("numeroPedido");
+        TextView tvSiEstadoOn_01 = findViewById(R.id.tvSiEstadoOn_01);
 
-        tvTicket_01.setText("Pedido → " + numberPedido);
+        Button btnPagoEfectivo_01 = (Button) findViewById(R.id.btnPagoEfectivo_01);
+        Button btnPagoDigilal_01 = (Button) findViewById(R.id.btnPagoDigilal_01);
+        Button btnEditarPedido_01 = (Button) findViewById(R.id.btnEditarPedido_01);
+        Button btnConfirmarEntrega = (Button) findViewById(R.id.btnConfirmarEntrega);
+
+        String numberPedido = getIntent().getStringExtra("numeroPedido");
+        String EstadoPedido = getIntent().getStringExtra("EstadoPedido");
+
+        if (EstadoPedido.equals("Pagado")) {
+            tvSiEstadoOn_01.setVisibility(View.VISIBLE);
+            btnConfirmarEntrega.setVisibility(View.VISIBLE);
+
+            btnPagoEfectivo_01.setVisibility(View.GONE);
+            btnPagoDigilal_01.setVisibility(View.GONE);
+            btnEditarPedido_01.setVisibility(View.GONE);
+
+        } else {
+            tvSiEstadoOn_01.setVisibility(View.GONE);
+            btnConfirmarEntrega.setVisibility(View.GONE);
+
+            btnPagoEfectivo_01.setVisibility(View.VISIBLE);
+            btnPagoDigilal_01.setVisibility(View.VISIBLE);
+            btnEditarPedido_01.setVisibility(View.VISIBLE);
+        }
+
+        tvTicket_01.setText(numberPedido + " → " + EstadoPedido);
 
         Button btnBack07 = (Button) findViewById(R.id.btnBack07);
         btnBack07.setOnClickListener(new View.OnClickListener() {
@@ -61,5 +86,7 @@ public class cTicket extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    // Método para controlar la visibilidad de las vistas
 
 }
