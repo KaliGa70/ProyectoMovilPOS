@@ -106,4 +106,14 @@ public class inventario_articulos extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onBackPressed() {
+        // Aquí colocamos el código que queremos que se ejecute al presionar el botón de retroceso
+        // En este caso, llamaremos al método super.onBackPressed() para mantener el comportamiento predeterminado
+        // y simplemente regresar a la actividad anterior si existe, o cerrar la actividad actual si no hay actividad anterior.
+        super.onBackPressed();
+        Intent intent = new Intent(inventario_articulos.this, cInventario.class);
+        startActivity(intent);
+        finish();
+    }
 }

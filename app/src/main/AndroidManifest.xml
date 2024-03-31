@@ -18,6 +18,15 @@
         android:theme="@style/Theme.ProyectoMovilPOS"
         tools:targetApi="31">
         <activity
+            android:name=".inventarioVisualizar"
+            android:exported="false" />
+        <activity
+            android:name=".inventarioEditar"
+            android:exported="false" />
+        <activity
+            android:name=".inventarioDelete"
+            android:exported="false" />
+        <activity
             android:name=".confirmarCategoriaProductoAdd"
             android:exported="false" />
         <activity

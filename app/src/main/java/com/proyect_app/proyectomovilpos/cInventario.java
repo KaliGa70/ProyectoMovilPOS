@@ -26,6 +26,10 @@ public class cInventario extends AppCompatActivity {
 
         Button btnBack01 = (Button) findViewById(R.id.btnBack08);
         Button btnAdd = (Button) findViewById(R.id.btnAdd);
+        Button btnDeleteProd = (Button) findViewById(R.id.btnDeleteProd);
+        Button btnEditarProd = (Button) findViewById(R.id.btnEditarProd_02);
+        Button btnVer = (Button) findViewById(R.id.btnVer);
+
 
         btnBack01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +53,49 @@ public class cInventario extends AppCompatActivity {
             }
         });
 
+        btnDeleteProd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(cInventario.this, inventarioDelete.class );
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        btnEditarProd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(cInventario.this, inventarioEditar.class );
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        btnVer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(cInventario.this, inventarioVisualizar.class );
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+
+    }
+    @Override
+    public void onBackPressed() {
+        // Aquí colocamos el código que queremos que se ejecute al presionar el botón de retroceso
+        // En este caso, llamaremos al método super.onBackPressed() para mantener el comportamiento predeterminado
+        // y simplemente regresar a la actividad anterior si existe, o cerrar la actividad actual si no hay actividad anterior.
+        super.onBackPressed();
+        Intent intent = new Intent(cInventario.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
