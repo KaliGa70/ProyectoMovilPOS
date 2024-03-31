@@ -56,6 +56,22 @@
         <item>$18</item>
     </string-array>
 
+    <string-array name="NumeroTicket">
+        <item>0001</item>
+        <item>0002</item>
+        <item>0003</item>
+        <item>0004</item>
+        <item>0005</item>
+    </string-array>
+
+    <string-array name="PagadoNoPagado">
+        <item>Sin Pagar</item>
+        <item>Pagado</item>
+        <item>Pagado</item>
+        <item>Sin Pagar</item>
+        <item>Sin Pagar</item>
+    </string-array>
+
     <string-array name="Chi">
 
     </string-array>

@@ -29,7 +29,7 @@ public class cGuardado extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(cGuardado.this, NuevoPendiente.class);
+                Intent intent = new Intent(cGuardado.this, cPedidos.class);
                 startActivity(intent);
                 finish();
             }

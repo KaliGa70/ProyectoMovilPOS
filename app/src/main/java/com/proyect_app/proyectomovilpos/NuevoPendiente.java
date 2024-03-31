@@ -53,7 +53,7 @@ public class NuevoPendiente extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //cPendiente();
+                cPendiente();
 
             }
         });
@@ -89,7 +89,7 @@ public class NuevoPendiente extends AppCompatActivity {
 
     public void cPendiente() {
 
-        Intent intent = new Intent(NuevoPendiente.this, MainActivity.class);
+        Intent intent = new Intent(NuevoPendiente.this, cPendientes.class);
         startActivity(intent);
         finish();
 

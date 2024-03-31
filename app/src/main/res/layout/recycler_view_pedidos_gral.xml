@@ -48,7 +48,7 @@
                     app:layout_constraintVertical_bias="0.509" />
 
                 <ImageButton
-                    android:id="@+id/imageBtnDelete"
+                    android:id="@+id/imageBtnDelete_02"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:backgroundTint="#00FFFFFF"
@@ -80,7 +80,7 @@
                     android:background="#000000"
                     android:textColor="#000000"
                     android:textSize="96sp"
-                    app:layout_constraintBottom_toTopOf="@+id/imageBtnDelete"
+                    app:layout_constraintBottom_toTopOf="@+id/imageBtnDelete_02"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"

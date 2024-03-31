@@ -18,6 +18,12 @@
         android:theme="@style/Theme.ProyectoMovilPOS"
         tools:targetApi="31">
         <activity
+            android:name=".cTicket"
+            android:exported="false" />
+        <activity
+            android:name=".cPendientes"
+            android:exported="false" />
+        <activity
             android:name=".MetodoPago"
             android:exported="false" />
         <activity
