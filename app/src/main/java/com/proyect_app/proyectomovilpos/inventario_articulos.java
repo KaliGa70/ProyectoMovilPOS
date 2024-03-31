@@ -12,7 +12,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class inventario_articulos extends AppCompatActivity {
@@ -30,11 +29,12 @@ public class inventario_articulos extends AppCompatActivity {
             return insets;
         });
 
-        Button btnBack01 = (Button) findViewById(R.id.btnBack01);
-        Button btntodos = (Button) findViewById(R.id.btntodos);
+        Button btnBack01 = (Button) findViewById(R.id.btnBack08);
+        Button btnProductos = (Button) findViewById(R.id.btnProductos);
+        Button btncat = (Button) findViewById(R.id.btncat);
         Button imprime = (Button) findViewById(R.id.imprime);
 
-        btntodos.setOnClickListener(new View.OnClickListener() {
+        btnProductos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -44,6 +44,18 @@ public class inventario_articulos extends AppCompatActivity {
 
             }
         });
+
+        btncat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(inventario_articulos.this, inventario_articulos_categorias.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
         btnBack01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

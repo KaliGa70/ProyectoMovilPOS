@@ -8,38 +8,68 @@
     tools:context=".cInventario">
 
     <Button
-        android:id="@+id/btncant"
-        android:layout_width="365dp"
-        android:layout_height="154dp"
+        android:id="@+id/btnDeleteProd"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/custom_button_cant"
         android:fontFamily="@font/lexend_medium"
-        android:text="@string/btncant"
+        android:text="Eliminar"
         android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnart"
-        app:layout_constraintVertical_bias="0.211" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
 
     <Button
-        android:id="@+id/btnart"
-        android:layout_width="365dp"
-        android:layout_height="154dp"
-        android:layout_marginTop="108dp"
+        android:id="@+id/btnEditar"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_boton_todos"
+        android:fontFamily="@font/lexend_medium"
+        android:text="Editar"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteProd" />
+
+    <Button
+        android:id="@+id/btnVer"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_boton_cat"
+        android:fontFamily="@font/lexend_medium"
+        android:text="Visualizar"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack08"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditar" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/custom_boton_articulos"
         android:fontFamily="@font/lexend_medium"
-        android:text="@string/textArt"
+        android:text="Añadir"
         android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnDeleteProd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAgregar_02" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvAgregar_02"
         android:layout_width="360dp"
         android:layout_height="51dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/custom_textview_nombre_gris"
         android:fontFamily="@font/lexend_medium"
         android:text="@string/textInv"
@@ -47,12 +77,11 @@
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TituloPedidosMovilPOS"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintTop_toBottomOf="@+id/TituloPedidosMovilPOS" />
 
     <TextView
         android:id="@+id/TituloPedidosMovilPOS"
@@ -71,19 +100,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
+
     <Button
-        android:id="@+id/btnBack01"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
+        android:id="@+id/btnBack08"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         android:text="Regresar"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.303"
-        app:layout_constraintStart_toEndOf="@+id/TituloPedidosMovilPOS"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVer" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,8 +24,8 @@ public class cInventario extends AppCompatActivity {
             return insets;
         });
 
-        Button btnBack01 = (Button) findViewById(R.id.btnBack01);
-        Button btnart = (Button) findViewById(R.id.btnart);
+        Button btnBack01 = (Button) findViewById(R.id.btnBack08);
+        Button btnAdd = (Button) findViewById(R.id.btnAdd);
 
         btnBack01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +38,7 @@ public class cInventario extends AppCompatActivity {
             }
         });
 
-        btnart.setOnClickListener(new View.OnClickListener() {
+        btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

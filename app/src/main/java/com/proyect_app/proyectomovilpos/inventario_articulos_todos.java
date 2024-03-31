@@ -24,7 +24,7 @@ public class inventario_articulos_todos extends AppCompatActivity {
             return insets;
         });
 
-        Button btnBack01 = (Button) findViewById(R.id.btnBack01);
+        Button btnBack01 = (Button) findViewById(R.id.btnBack08);
 
         btnBack01.setOnClickListener(new View.OnClickListener() {
             @Override
