@@ -1,5 +1,7 @@
 package com.proyect_app.proyectomovilpos;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public class aCarrito extends AppCompatActivity {
+    Button btnConfirmar_02 = findViewById(R.id.btnConfirmar_02);
 
     ArrayList<CarritoModel> carritoModel = new ArrayList<>();
 
@@ -32,10 +36,10 @@ public class aCarrito extends AppCompatActivity {
 
         RecyclerView rvCarrito = findViewById(R.id.rvCarrito);
 
-
+        Button btnConfirmar_02 = findViewById(R.id.btnConfirmar_02);
 
         Button btnBack05 = (Button) findViewById(R.id.btnBack04);
-        Button btnConfirmar_02 = (Button) findViewById(R.id.btnConfirmar_02);
+
 
 
         btnBack05.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +78,7 @@ public class aCarrito extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 
     private void setUpCategoryModels() {
         String[] CarritoNames = getResources().getStringArray(R.array.Agua);
