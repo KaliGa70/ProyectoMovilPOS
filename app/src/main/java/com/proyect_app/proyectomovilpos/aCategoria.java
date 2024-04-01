@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -44,7 +43,7 @@ public class aCategoria extends AppCompatActivity implements RecyclerViewInterfa
         categoryNa = getIntent().getStringExtra("CATEGORY1");
         int image = getIntent().getIntExtra("IMAGE", 0);
 
-        TextView tvCategoria_02 = findViewById(R.id.tvCategoria_02);
+        TextView tvCategoria_02 = findViewById(R.id.tvControl_01);
         RecyclerView mrecyclerView01 = findViewById(R.id.mRecyclerView01);
 
 

@@ -57,7 +57,7 @@
                     app:layout_constraintHorizontal_bias="0.954"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvLineDeco_03"
-                    app:srcCompat="@mipmap/ic_delete_prod_foreground" />
+                    app:srcCompat="@mipmap/ic_delete1_prod_foreground" />
 
                 <TextView
                     android:id="@+id/tvLineDeco_04"
