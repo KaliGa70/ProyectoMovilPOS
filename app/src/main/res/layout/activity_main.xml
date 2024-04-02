@@ -133,10 +133,10 @@
 
     <TextView
         android:id="@+id/txtwMarketPlace"
-        android:layout_width="252dp"
-        android:layout_height="57dp"
+        android:layout_width="160dp"
+        android:layout_height="52dp"
         android:fontFamily="@font/archivo_black"
-        android:text="Marketplace"
+        android:text="Agenda"
         android:textColor="#000000"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnMarketPlace"
