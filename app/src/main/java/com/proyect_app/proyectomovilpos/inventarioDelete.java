@@ -25,6 +25,30 @@ public class inventarioDelete extends AppCompatActivity {
         });
 
         Button btnBack09 = (Button) findViewById(R.id.btnBack09);
+        Button btnProductos_02 = (Button) findViewById(R.id.btnProductos_02);
+        Button btncat_02 = (Button) findViewById(R.id.btncat_02);
+
+        btnProductos_02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(inventarioDelete.this, inventarioDeleteProductos.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        btncat_02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(inventarioDelete.this, inventarioDeleteCategoria.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
         btnBack09.setOnClickListener(new View.OnClickListener() {
             @Override

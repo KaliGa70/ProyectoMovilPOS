@@ -11,46 +11,40 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class cMarketPlace extends AppCompatActivity {
+public class inventarioDeleteCategoria extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_cmarket_place);
+        setContentView(R.layout.activity_inventario_delete_categoria);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        Button btnBack01 = (Button) findViewById(R.id.btnBack08);
+        Button btnBack16 = (Button) findViewById(R.id.btnBack16);
 
-        btnBack01.setOnClickListener(new View.OnClickListener() {
+        btnBack16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(cMarketPlace.this, MainActivity.class);
+                Intent intent = new Intent(inventarioDeleteCategoria.this, inventarioDelete.class);
                 startActivity(intent);
                 finish();
 
             }
         });
-
-
-
-
     }
-
     @Override
     public void onBackPressed() {
         // Aquí colocamos el código que queremos que se ejecute al presionar el botón de retroceso
         // En este caso, llamaremos al método super.onBackPressed() para mantener el comportamiento predeterminado
         // y simplemente regresar a la actividad anterior si existe, o cerrar la actividad actual si no hay actividad anterior.
         super.onBackPressed();
-        Intent intent = new Intent(cMarketPlace.this, MainActivity.class);
+        Intent intent = new Intent(inventarioDeleteCategoria.this, inventarioDelete.class);
         startActivity(intent);
         finish();
     }
-
 }

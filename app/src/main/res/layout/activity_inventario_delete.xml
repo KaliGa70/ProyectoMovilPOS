@@ -57,4 +57,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
+    <Button
+        android:id="@+id/btnProductos_02"
+        android:layout_width="365dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/custom_boton_todos"
+        android:elevation="3dp"
+        android:fontFamily="@font/lexend_medium"
+        android:padding="30dp"
+        android:text="Productos"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.159" />
+
+    <Button
+        android:id="@+id/btncat_02"
+        android:layout_width="365dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/custom_boton_cat"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/textcat"
+        android:textSize="45sp"
+        android:elevation="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.592" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,7 +45,7 @@
         android:layout_height="51dp"
         android:background="@drawable/custom_textview_nombre_gris"
         android:fontFamily="@font/lexend_medium"
-        android:text="@string/textcat"
+        android:text="Agregar categorias"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp"

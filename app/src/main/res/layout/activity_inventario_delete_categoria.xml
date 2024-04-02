@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".inventarioEditar">
+    tools:context=".inventarioDeleteCategoria">
 
     <TextView
-        android:id="@+id/TituloInventarioEditarMovilPOS"
+        android:id="@+id/TituloInventarioDeleteCategoiaMovilPOS"
         android:layout_width="163dp"
         android:layout_height="45dp"
         android:background="@drawable/custom_logo"
@@ -25,12 +25,12 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <TextView
-        android:id="@+id/tvCategoria_05"
+        android:id="@+id/tvCategoria_07"
         android:layout_width="365dp"
         android:layout_height="49dp"
         android:background="@drawable/custom_textview_nombre_gris"
         android:fontFamily="@font/lexend_medium"
-        android:text="Editar"
+        android:text="Eliminar Categorias"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -39,11 +39,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TituloInventarioEditarMovilPOS"
+        app:layout_constraintTop_toBottomOf="@+id/TituloInventarioDeleteCategoiaMovilPOS"
         app:layout_constraintVertical_bias="0.038" />
 
     <Button
-        android:id="@+id/btnBack10"
+        android:id="@+id/btnBack16"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
@@ -56,39 +56,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
-
-    <Button
-        android:id="@+id/btnProductos_03"
-        android:layout_width="365dp"
-        android:layout_height="154dp"
-        android:layout_marginTop="108dp"
-        android:background="@drawable/custom_boton_todos"
-        android:elevation="3dp"
-        android:fontFamily="@font/lexend_medium"
-        android:padding="30dp"
-        android:text="Productos"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
-
-    <Button
-        android:id="@+id/btncat_03"
-        android:layout_width="365dp"
-        android:layout_height="154dp"
-        android:layout_marginTop="108dp"
-        android:background="@drawable/custom_boton_cat"
-        android:fontFamily="@font/lexend_medium"
-        android:text="@string/textcat"
-        android:textSize="45sp"
-        android:elevation="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.565"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,6 +25,8 @@ public class inventarioEditar extends AppCompatActivity {
         });
 
         Button btnBack10 = (Button) findViewById(R.id.btnBack10);
+        Button btnProductos_03 = (Button) findViewById(R.id.btnProductos_03);
+        Button btncat_03 = (Button) findViewById(R.id.btncat_03);
 
         btnBack10.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,29 @@ public class inventarioEditar extends AppCompatActivity {
 
             }
         });
+
+        btnProductos_03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(inventarioEditar.this, inventarioEditarProductos.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        btncat_03.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(inventarioEditar.this, inventarioEditarCategorias.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
     }
     @Override
     public void onBackPressed() {

@@ -21,6 +21,33 @@
         android:theme="@style/Theme.ProyectoMovilPOS"
         tools:targetApi="31">
         <activity
+            android:name=".MyXAxisValueFormatter"
+            android:exported="false" />
+        <activity
+            android:name=".cGrafica"
+            android:exported="false" />
+        <activity
+            android:name=".inventarioEditarCategorias"
+            android:exported="false" />
+        <activity
+            android:name=".inventarioEditarProductos"
+            android:exported="false" />
+        <activity
+            android:name=".inventarioDeleteCategoria"
+            android:exported="false" />
+        <activity
+            android:name=".inventarioDeleteProductos"
+            android:exported="false" />
+        <activity
+            android:name=".cReporteGeneral"
+            android:exported="false" />
+        <activity
+            android:name=".cVentas"
+            android:exported="false" />
+        <activity
+            android:name=".cGastos"
+            android:exported="false" />
+        <activity
             android:name=".inventarioVisualizar"
             android:exported="false" />
         <activity

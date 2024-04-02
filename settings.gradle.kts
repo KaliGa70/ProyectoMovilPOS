@@ -5,6 +5,10 @@ pluginManagement {
                 includeGroupByRegex("com\\.android.*")
                 includeGroupByRegex("com\\.google.*")
                 includeGroupByRegex("androidx.*")
+                google()
+                mavenCentral()
+                gradlePluginPortal()
+
             }
         }
         mavenCentral()
@@ -16,8 +20,12 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        jcenter()
     }
 }
 
 rootProject.name = "ProyectoMovilPOS"
 include(":app")
+include ("MPChartLib")
+
