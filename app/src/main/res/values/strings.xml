@@ -66,8 +66,8 @@
 
     <string-array name="PagadoNoPagado">
         <item>Sin Pagar</item>
-        <item>Pagado</item>
-        <item>Pagado</item>
+        <item>Sin Pagar</item>
+        <item>Sin Pagar</item>
         <item>Sin Pagar</item>
         <item>Sin Pagar</item>
     </string-array>

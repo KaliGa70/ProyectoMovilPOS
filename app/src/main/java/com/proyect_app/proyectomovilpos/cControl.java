@@ -25,8 +25,8 @@ public class cControl extends AppCompatActivity {
         });
 
         Button btnBack12 = (Button) findViewById(R.id.btnBack12);
-        Button btnGastos = (Button) findViewById(R.id.btnGastos);
-        Button btnVentas = (Button) findViewById(R.id.btnVentas);
+        //Button btnGastos = (Button) findViewById(R.id.btnGastos);
+        //Button btnVentas = (Button) findViewById(R.id.btnVentas);
         Button btnReporteGral = (Button) findViewById(R.id.btnReporteGral);
 
         btnBack12.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +40,7 @@ public class cControl extends AppCompatActivity {
             }
         });
 
-        btnGastos.setOnClickListener(new View.OnClickListener() {
+        /*btnGastos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -60,7 +60,7 @@ public class cControl extends AppCompatActivity {
                 finish();
 
             }
-        });
+        });*/
 
         btnReporteGral.setOnClickListener(new View.OnClickListener() {
             @Override

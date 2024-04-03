@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Set;
 
 public class aCarrito extends AppCompatActivity {
-    Button btnConfirmar_02 = findViewById(R.id.btnConfirmar_02);
+    Button btnConfirmar_02;
 
     ArrayList<CarritoModel> carritoModel = new ArrayList<>();
 
@@ -36,7 +36,8 @@ public class aCarrito extends AppCompatActivity {
 
         RecyclerView rvCarrito = findViewById(R.id.rvCarrito);
 
-        Button btnConfirmar_02 = findViewById(R.id.btnConfirmar_02);
+
+        btnConfirmar_02 = findViewById(R.id.btnConfirmar_02); // Move initialization here
 
         Button btnBack05 = (Button) findViewById(R.id.btnBack04);
 

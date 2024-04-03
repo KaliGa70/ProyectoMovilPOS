@@ -66,6 +66,18 @@ public class cTicket extends AppCompatActivity {
             }
         });
 
+        btnPagoEfectivo_01.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(cTicket.this, cYaTePago.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+
     }
 
     public void cBack07() {

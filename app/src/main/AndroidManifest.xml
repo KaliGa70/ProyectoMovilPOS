@@ -21,6 +21,9 @@
         android:theme="@style/Theme.ProyectoMovilPOS"
         tools:targetApi="31">
         <activity
+            android:name=".cYaTePago"
+            android:exported="false" />
+        <activity
             android:name=".MyXAxisValueFormatter"
             android:exported="false" />
         <activity
