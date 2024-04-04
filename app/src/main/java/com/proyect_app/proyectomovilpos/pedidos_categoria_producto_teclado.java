@@ -2,9 +2,12 @@ package com.proyect_app.proyectomovilpos;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,10 +15,21 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class pedidos_categoria_producto_teclado extends AppCompatActivity {
 
-    private String name, categoryName;
+    private String name, categoryName, producto_id;
     private int image;
+    FirebaseFirestore db;
+
+    private TextView tvPantalla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +42,16 @@ public class pedidos_categoria_producto_teclado extends AppCompatActivity {
             return insets;
         });
 
-        name = getIntent().getStringExtra("NAME");
-        categoryName = getIntent().getStringExtra("CATEGORY");
+        db = FirebaseFirestore.getInstance();
+
+        //name = getIntent().getStringExtra("NAME");
+        categoryName = getIntent().getStringExtra("CATEGORY_NAME");
+        producto_id = getIntent().getStringExtra("PRODUCO_ID");
 
         TextView tvCategoria_03 = findViewById(R.id.tvCategoria_03);
         tvCategoria_03.setText(name);
 
-        TextView tvPantalla = findViewById(R.id.tvPantalla);
+        tvPantalla = findViewById(R.id.tvPantalla);
 
         Button btnBack03 = (Button) findViewById(R.id.btnBack03);
         Button btnConfirmar = (Button) findViewById(R.id.btnConfirmar);
@@ -255,9 +272,53 @@ public class pedidos_categoria_producto_teclado extends AppCompatActivity {
 
     public void cConfirmar() {
 
-        Intent intent = new Intent(pedidos_categoria_producto_teclado.this, cGuardado.class);
-        startActivity(intent);
-        finish();
+        Toast.makeText(this, tvPantalla.getText().toString(), Toast.LENGTH_SHORT).show();
+
+        if((tvPantalla.getText().toString()) == "" || (tvPantalla.getText().toString()) == null) {
+
+            Toast.makeText(this, "No hay un cantidad valida.", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            String cantidad_vendidas = tvPantalla.getText().toString();
+            int precio_total = Integer.parseInt(cantidad_vendidas) * 20;
+            String price_total = precio_total + "";
+
+            // Crear un objeto con los datos del nuevo usuario
+            Map<String, Object> nuevoArticulo = new HashMap<>();
+            nuevoArticulo.put("id", producto_id);
+            nuevoArticulo.put("cantidad_vendidas", cantidad_vendidas);
+            nuevoArticulo.put("total", price_total);
+
+            // Agregar el nuevo usuario a la colección "usuarios"
+            db.collection("Ventas")
+                    .document() // Esto generará automáticamente un ID único para el nuevo documento
+                    .collection("Articulos")
+                    .add(nuevoArticulo) // Agregar el nuevo artículo a la colección "Articulos"
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Log.d("TAG", "Nuevo artículo agregado con ID: " + documentReference.getId());
+                            // Aquí puedes realizar cualquier acción adicional después de agregar el artículo
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            // Manejar el error si la operación falla
+                            Log.e("TAG", "Error al agregar nuevo artículo", e);
+                        }
+                    });
+
+
+
+            Intent intent = new Intent(pedidos_categoria_producto_teclado.this, cGuardado.class);
+            startActivity(intent);
+            finish();
+
+        }
+
+
 
     }
 }

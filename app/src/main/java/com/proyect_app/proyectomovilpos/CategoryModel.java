@@ -2,11 +2,16 @@ package com.proyect_app.proyectomovilpos;
 
 public class CategoryModel {
 
-    String categoryName;
-    int image;
+    private String categoryName;
+    private String image;
 
 
-    public CategoryModel(String categoryName, int image) {
+
+    private String categoryId; // Nuevo campo para almacenar el ID de la categoría
+
+
+    public CategoryModel(String categoryId, String categoryName, String image) {
+        this.categoryId = categoryId;
         this.categoryName = categoryName;
         this.image = image;
     }
@@ -19,11 +24,19 @@ public class CategoryModel {
         this.categoryName = categoryName;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 }

@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class AA_RecyclerViewAdapter extends RecyclerView.Adapter<AA_RecyclerViewAdapter.MyViewHolder> {
@@ -32,6 +34,7 @@ public class AA_RecyclerViewAdapter extends RecyclerView.Adapter<AA_RecyclerView
         return new MyViewHolder(view, recyclerViewInterface);
     }
 
+    // Inside onBindViewHolder method
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         // Calculamos el índice base para los datos de esta fila (izquierda)
@@ -40,7 +43,9 @@ public class AA_RecyclerViewAdapter extends RecyclerView.Adapter<AA_RecyclerView
         // Configuramos los datos para la fila izquierda
         CategoryModel categoryModelLeft = categoryModels.get(leftIndex);
         holder.tvNameLeft.setText(categoryModelLeft.getCategoryName());
-        holder.imageViewLeft.setImageResource(categoryModelLeft.getImage());
+        Glide.with(context)
+                .load(categoryModelLeft.getImage()) // Assuming getImage() returns the image URL or path
+                .into(holder.imageViewLeft);
 
         // Verificamos si hay una categoría disponible para la fila derecha
         int rightIndex = leftIndex + 1;
@@ -48,7 +53,9 @@ public class AA_RecyclerViewAdapter extends RecyclerView.Adapter<AA_RecyclerView
             // Configuramos los datos para la fila derecha
             CategoryModel categoryModelRight = categoryModels.get(rightIndex);
             holder.tvNameRight.setText(categoryModelRight.getCategoryName());
-            holder.imageViewRight.setImageResource(categoryModelRight.getImage());
+            Glide.with(context)
+                    .load(categoryModelRight.getImage()) // Assuming getImage() returns the image URL or path
+                    .into(holder.imageViewRight);
 
             // Hacemos visible la fila derecha
             holder.itemViewRight.setVisibility(View.VISIBLE);

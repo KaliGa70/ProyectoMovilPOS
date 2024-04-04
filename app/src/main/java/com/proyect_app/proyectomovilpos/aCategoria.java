@@ -1,10 +1,13 @@
 package com.proyect_app.proyectomovilpos;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,16 +17,29 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
 import java.util.ArrayList;
 
 public class aCategoria extends AppCompatActivity implements RecyclerViewInterface{
 
     ArrayList<CategoryModel> categoryModels = new ArrayList<>();
-    int[] categoryImages ={R.drawable.ic_launcher_background, R.drawable.ic_launcher_background
-            , R.drawable.ic_launcher_background, R.drawable.ic_launcher_background
-            , R.drawable.ic_launcher_background};
+    FirebaseFirestore db;
+    FirebaseStorage storage;
+    RecyclerView mrecyclerView01;
+    AA_RecyclerViewAdapter adapter;
 
-    private String name, categoryNa = "";
+    private Context context = null;
+
+    private String name, categoryNa = "", id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,26 +52,32 @@ public class aCategoria extends AppCompatActivity implements RecyclerViewInterfa
             return insets;
         });
 
+        db = FirebaseFirestore.getInstance();
+        storage = FirebaseStorage.getInstance();
+
         Button btnBack02 = (Button) findViewById(R.id.btnBack02);
         //Button btnConfirmar = (Button) findViewById(R.id.btnConfirmar_02);
 
-        name = getIntent().getStringExtra("NAME");
-        categoryNa = getIntent().getStringExtra("CATEGORY1");
-        int image = getIntent().getIntExtra("IMAGE", 0);
+        /**tvCategoria_02.setText(name);
+         categoryNa = getIntent().getStringExtra("CATEGORY1");
+         int image = getIntent().getIntExtra("IMAGE", 0);**/
+
+        name = getIntent().getStringExtra("CATEGORY_NAME");
+        categoryNa = getIntent().getStringExtra("CATEGORY1");;
+        id = getIntent().getStringExtra("CATEGORY_ID");
 
         TextView tvCategoria_02 = findViewById(R.id.tvControl_01);
-        RecyclerView mrecyclerView01 = findViewById(R.id.mRecyclerView01);
+        mrecyclerView01 = findViewById(R.id.mRecyclerView01);
 
+        //tvCategoria_02.setText(name);
 
         if(categoryNa == null){
-            tvCategoria_02.setText(name);
-        } else {
-            tvCategoria_02.setText(categoryNa);
-        }
+         tvCategoria_02.setText(name);
+         } else {
+         tvCategoria_02.setText(categoryNa);
+         }
 
-        setUpCategoryModels();
-
-        AA_RecyclerViewAdapter adapter = new AA_RecyclerViewAdapter(this, categoryModels, this);
+        adapter = new AA_RecyclerViewAdapter(this, categoryModels, this);
         mrecyclerView01.setAdapter(adapter);
         mrecyclerView01.setLayoutManager(new LinearLayoutManager(this));
 
@@ -67,6 +89,10 @@ public class aCategoria extends AppCompatActivity implements RecyclerViewInterfa
 
             }
         });
+
+        // Obtener categorías de Firebase
+        obtenerCategoriasDesdeFirebase();
+
     }
 
     @Override
@@ -80,7 +106,7 @@ public class aCategoria extends AppCompatActivity implements RecyclerViewInterfa
         finish();
     }
 
-    private void setUpCategoryModels() {
+   /** private void setUpCategoryModels() {
         // Construyes el identificador del recurso R.array utilizando la variable 'name'
 
         int resId;
@@ -97,7 +123,64 @@ public class aCategoria extends AppCompatActivity implements RecyclerViewInterfa
         for (int i = 0; i < CategoryNames.length; i++) {
             categoryModels.add(new CategoryModel(CategoryNames[i], categoryImages[i]));
         }
+    }**/
+
+
+
+   private void obtenerCategoriasDesdeFirebase() {
+       db.collection("Categorias").document(id).collection("Articulos")
+               .get()
+               .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                   @Override
+                   public void onSuccess(QuerySnapshot querySnapshot) {
+                       categoryModels.clear(); // Limpiar la lista antes de agregar nuevas categorías
+                       for (DocumentSnapshot document : querySnapshot) {
+                           String nombre = document.getString("nombre");
+                           String nombreImagen = document.getString("imagen");
+                           String id = document.getId(); // Obtener el ID del documento
+                           CategoryModel model = new CategoryModel(id, nombre, getRutaImagen(nombreImagen));
+                           categoryModels.add(model);
+                           if (!existeImagen(nombreImagen)) {
+                               descargarImagen(nombreImagen);
+                           }
+                       }
+                       adapter.notifyDataSetChanged(); // Notificar al adaptador sobre los cambios
+                   }
+               });
+   }
+
+    private boolean existeImagen(String nombreImagen) {
+        File file = new File(getRutaImagen(nombreImagen));
+        return file.exists();
     }
+
+    private String getRutaImagen(String nombreImagen) {
+        return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/" + nombreImagen;
+    }
+
+    private void descargarImagen(String nombreImagen) {
+        context = this.getApplicationContext();
+        // Referencia al archivo en Storage
+        StorageReference storageReference = storage.getReference().child(nombreImagen);
+
+        // Descargar archivo
+        File file = new File(getRutaImagen(nombreImagen));
+        storageReference.getFile(file)
+                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        Toast.makeText(context, "Imagen descargada correctamente", Toast.LENGTH_SHORT).show();
+                        // Notificar al adaptador de que los datos han cambiado
+                        adapter.notifyDataSetChanged();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(Exception e) {
+                        Toast.makeText(context, "Error al descargar la imagen: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
 
     public void cBack02() {
 
@@ -119,7 +202,7 @@ public class aCategoria extends AppCompatActivity implements RecyclerViewInterfa
     public void onItemClick(int position) {
         Intent intent = new Intent(aCategoria.this, pedidos_categoria_producto_teclado.class);
 
-
+/*
         if(categoryNa == null){
             intent.putExtra("CATEGORY", name);
         } else {
@@ -127,7 +210,10 @@ public class aCategoria extends AppCompatActivity implements RecyclerViewInterfa
         }
 
         intent.putExtra("NAME", categoryModels.get(position).getCategoryName());
-        intent.putExtra("IMAGE", categoryModels.get(position).getImage());
+        intent.putExtra("IMAGE", categoryModels.get(position).getImage());*/
+
+        intent.putExtra("CATEGORY_NAME", name);
+        intent.putExtra("PRODUCO_ID",  categoryModels.get(position).getCategoryId());
 
         startActivity(intent);
         finish();
